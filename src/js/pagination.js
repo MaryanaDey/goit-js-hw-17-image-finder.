@@ -16,15 +16,25 @@ refs.cardContainer.addEventListener('click', openModal);
 function onSearch(event) {
   event.preventDefault();
   imgApiServise.query = event.currentTarget.elements.query.value;
-  if (imgApiServise.query.length >= 2) {
-    loadMoreBtn.show();
-    imgApiServise.resetPage();
-    clearArticlesContainer();
-    fetchArticles();
-  } else {
-    clearArticlesContainer();
-    loadMoreBtn.hide();
-  }
+
+  setTimeout(() => {
+    if(imgApiServise.query === '' || imgApiServise.query <=2 || imgApiServise.status === 404) {
+      return alert('Введи что-то нормальное');
+     }
+    if (imgApiServise.query.length >= 2) {
+      loadMoreBtn.show();
+      imgApiServise.resetPage();
+      clearArticlesContainer();
+      fetchArticles();
+//if(imgApiServise.status === 404) {
+        //return alert('введи корректный запрос')
+     // }
+    } else {
+      clearArticlesContainer();
+      loadMoreBtn.hide();
+
+    }
+  }, 1500);
 }
 
 function fetchArticles() {

@@ -1,7 +1,7 @@
 const debounce = require('lodash.debounce');
 import animateScrollTo from 'animated-scroll-to';
 import templatesCard from '../templates/createCard.hbs';
-import ApiService from './apiService';
+import ApiService from './api-service';
 
 const containerCard = document.querySelector('.gallery');
 const btnEl = document.querySelector('[data-action=load]');
@@ -16,6 +16,8 @@ const apiService = new ApiService();
 
 function onInputSearchImages(e) {
   clearList();
+
+
   if (lol.value.length === 0) {
     btnEl.disabled = true;
 
