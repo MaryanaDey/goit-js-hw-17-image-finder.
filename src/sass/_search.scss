@@ -89,10 +89,12 @@ img {
 .photo-card {
   border: 1px solid #fff;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .photo-card:hover {
   transform: scale(1.03);
+
   box-shadow: 0 10px 20px #fff;
   .stats-item{
     color: #fff;

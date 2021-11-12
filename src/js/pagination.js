@@ -26,7 +26,7 @@ function onSearch(event) {
       imgApiServise.resetPage();
       clearArticlesContainer();
       fetchArticles();
-//if(imgApiServise.status === 404) {
+     //if(imgApiServise.status === 404) {
         //return alert('введи корректный запрос')
      // }
     } else {
